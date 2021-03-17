@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+</head>
+<body>
+    
+    <div class="container my-2" id="resume">
+    <h1 class="text-center my-3">Resume Generator</h1>
+
+    <div class="row">
+
+        <div class="col-md-6 ">
+         <div class="container">
+         <h3 class="text-center">personal information</h3>
+         <div class="form-group mt-2">
+            <label for="pic">Select your picture </label>
+            <input class="form-control" id="img" required type="file" placeholder="Enter Address Here" id="pic"/>
+        </div>
+         <div class="form-group mt-2">
+             <label for="name">Your Name </label>
+             <input class="form-control" required type="text" placeholder="Enter Name Here" id="name"/>
+         </div>
+         <div class="form-group mt-2">
+            <label for="role">Your Position </label>
+            <input class="form-control" required type="text" placeholder="Enter Your position Here" id="role"/>
+        </div>
+         <div class="form-group mt-2">
+            <label for="contact">Your Contact Number </label>
+            <input class="form-control" required type="text" placeholder="Enter Contact Here" id="contact"/>
+        </div>
+        <div class="form-group mt-2">
+            <label for="email">Your Email </label>
+            <input class="form-control" required type="email" placeholder="Enter Email Here" id="email"/>
+        </div>
+        <div class="form-group mt-2">
+            <label for="address">Your Address </label>
+            <textarea class="form-control" required rows="4" placeholder="Enter Address Here" id="address"></textarea>
+        </div>
+        <div class="form-group mt-2">
+            <label for="email">Date of Birth </label>
+            <input class="form-control" required type="date"  id="dob"/>
+        </div>
+
+        <div class="form-group mt-2">
+           
+            <h6 style="font-weight: 400;"> Marital Status</h6>
+            <input type="radio" id="single" class="status" name="gender" value="Single">
+            <label for="single">Single</label><br>
+            <input type="radio"  id="married" class="status" name="gender" value="Married">
+            <label for="married">Married</label><br>
+      
+        </div>
+
+        <h5 class="mt-3">Social Profile links</h5>
+        <div class="form-group my-3">
+            <label for="linkedin">Your Linkedin profile (Optional) </label>
+            <input class="form-control" type="text" placeholder="Enter Linkedin profile link Here" id="linkedin"/>
+        </div>
+        <div class="form-group my-3">
+            <label for="github">Your Github profile (Optional) </label>
+            <input class="form-control" type="text" placeholder="Enter Linkedin profile link Here" id="github"/>
+        </div>
+        <div class="form-group my-3">
+            <label for="portfolio">Your Portfolio (Optional) </label>
+            <input class="form-control" type="text" placeholder="Enter portfolio link Here" id="portfolio"/>
+        </div>
+       
+
+    </div>
+        </div>
+       
+        <div class="col-md-6">
+            <div class="container">
+                <h3 class="text-center">Professional Information</h3>
+                <div class="form-group mt-2">
+                    <label for="objective">Objective</label>
+                    <textarea class="form-control" rows="4" required  placeholder="Enter Your Objecvtive Here" id="objective"></textarea>
+                </div>
+             
+                <div class="form-group mt-2" id="Q">
+                    <label for="">Academic Qualification</label>
+                    <textarea class="form-control Qfield" rows="4" required  placeholder="Enter Qualification Here" ></textarea>
+                    <div class="conatiner text-center mt-3" id="Qaddbutton">
+                        <button onclick="adnewQfield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+                <div class="form-group mt-2" id="skills">
+                    <label for="">Skills</label>
+                    <input class="form-control skillsfield" type="text"  required  placeholder="Enter Qualification Here" />
+                    <div class="conatiner text-center mt-3" id="skillsaddbutton">
+                        <button onclick="adnewskillsfield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+
+                <div class="form-group mt-2" id="softskills">
+                    <label for="">Soft Skills (Optional)</label>
+                    <input class="form-control softskillsfield" type="text"  required id="ss"  placeholder="Enter Soft Skills Here" />
+                    <div class="conatiner text-center mt-3" id="softskillsaddbutton">
+                        <button onclick="addsoftskillsfield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="WE">
+                    <label for="">Work Experience</label>
+                    <textarea class="form-control WEfield" rows="4" required  placeholder="Enter Work Experience Here" ></textarea>
+                    <div class="conatiner text-center mt-3" id="Waddbutton">
+                        <button  onclick="adnewWEfield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="conatiner text-center my-2">
+        <button type="submit" onclick="generatecv()" class="btn btn-primary btn-lg">Generate Resume</button>
+    </div>
+</div>
+
+
+
+<div class="container" id="resumetemp">
+    <div class="row">
+<div class="col-md-4 py-5 background ">
+    <div class="text-center">
+<img   src="Random.jpg" id="imgT" class="img-fluid myimg "/>
+<p id="nameT"> Sarim Aqeel</p>
+</div>
+<div class="container mt-2">
+
+<b>Phone :</b><p id="contactT">03160068968</p>
+<b>Email :</b><p id="emailT">sarimaqeel036@gmail.com</p>
+<b>Address :</b><p id="addressT">M288</p>
+<b>Date of Birth :</b><p id="dobT">06-12-2000</p>
+<b>Marital Status :</b><p id="statusT">Single</p>
+</div>
+<div class="container" id="spaceholder">
+<hr/>
+
+<p id="linkT"><b>Linkedin Profile </b><a id="linkedinT" href=""> Linkedin Profile</a></p>
+<p id="gitT"><b>Github Profile </b><a id="githubT" href="">Github</a></p>
+<p id="portT"><b>My Portfolio </b><a id="portfolioT" href="">portfolio</a></p>
+</div>
+<div class="container" id="softskillscontainer">
+<hr/>
+<h2>Soft Skills</h2>
+<ul id="softskillsT">
+    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta nisi doloribus fugit non ad?</li>
+</ul>
+</div>
+
+
+</div>
+<div class="col-md-8 py-2">
+    <h1 id="nameT2" class="text-center"style="font-weigth: 1100px;" >Sarim Aqeel</h1>
+<h6 id="roleT" class="text-center">Intern</h6>
+    <!--objective card-->
+    
+<div class="card-header background" id="cardhead">
+<h3>Objective</h3>
+</div>
+<div class="card-body">
+<p id="objectiveT">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, nisi molestias! Totam molestiae animi enim perferendis explicabo. Tenetur optio perspiciatis laborum incidunt illo ut doloribus accusamus! Blanditiis maxime excepturi ut cumque eligendi nulla quae deleniti quos dolorum itaque, nam accusamus illo id commodi deserunt! Porro nemo ratione libero et necessitatibus!</p>
+</div>
+    
+
+    
+        <div class="card-header background" id="cardhead1">
+        <h3>Skills</h3>
+        </div>
+        <div class="card-body">
+       <ul id="skillsT">
+           <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta nisi doloribus fugit non ad?</li>
+       </ul>
+        </div>
+            
+    
+    
+        <div class="card-header background" id="cardhead2">
+        <h3>Work Experience</h3>
+        </div>
+        <div class="card-body">
+       <ul id="WET">
+           <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta nisi doloribus fugit non ad?</li>
+       </ul>
+        </div>
+            
+
+
+          
+                <div class="card-header background" id="cardhead3">
+                <h3>Academic Qualifications</h3>
+                </div>
+                <div class="card-body">
+               <ul id="QT">
+                   <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta nisi doloribus fugit non ad?</li>
+               </ul>
+                </div>
+                    
+                
+
+                  
+
+</div>
+                
+
+
+    </div>
+   
+
+</div>
+<div class="conatiner my-3 text-center" id="downloadbtn">
+    <button  class="btn btn-primary" id="download">Download Resume</button>
+   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

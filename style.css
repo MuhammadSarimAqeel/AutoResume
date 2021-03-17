@@ -1,0 +1,40 @@
+#resumetemp{
+    display: none;
+    border: 1px  solid rgba(0,0,0,.125);
+}
+
+#downloadbtn{
+    display: none;
+}
+.myimg{
+
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 150px;
+    
+}
+
+.background{
+   background-color: cornflowerblue;
+   
+}
+#cardhead{
+    background-color: cornflowerblue;
+    width: 760px;
+    margin-left: -12px;
+}
+#cardhead1{
+    background-color: cornflowerblue;
+    width: 760px;
+    margin-left: -12px;
+}
+#cardhead2{
+    background-color: cornflowerblue;
+    width: 760px;
+    margin-left: -12px;
+}
+#cardhead3{
+    background-color: cornflowerblue;
+    width: 760px;
+       margin-left: -12px;
+}
