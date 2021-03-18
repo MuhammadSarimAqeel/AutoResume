@@ -171,15 +171,19 @@ str2 = str2 + `<li> ${i.value} </li>`;
 }
 document.getElementById("QT").innerHTML = str2;
 
-let file = document.getElementById("img").value;
-let reader = new FileReader();
+let file = document.getElementById("img").files[0];
+
 if(file == null || file == ""){
     document.getElementById("imgT").src = "Random.jpg";
 }else{
+    let reader = new FileReader();
 reader.readAsDataURL(file);
-
+document.getElementById("imgT").src = reader.result;
+  
+  
 reader.onloadend = function () {
     document.getElementById("imgT").src = reader.result;
+    
 }
 
 }
